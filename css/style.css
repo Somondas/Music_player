@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap");
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -17,9 +19,29 @@ html {
   display: -ms-grid;
   display: grid;
   place-items: center;
+  background-image: url("https://wallpapercave.com/wp/wp11157510.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.main_div::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.5;
+  background-color: #fff;
+  z-index: 0;
 }
 
 .main_div .music_player {
+  z-index: 1;
+  background-color: #f9f9f9;
   padding: 2rem;
   width: 35rem;
   height: 45rem;
@@ -82,6 +104,11 @@ html {
 .main_div .music_player .image .rotate {
   -webkit-animation: rotate 7s linear infinite;
           animation: rotate 7s linear infinite;
+}
+
+.main_div .music_player .image .stop-rotate {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
 }
 
 @-webkit-keyframes rotate {
